@@ -1,4 +1,4 @@
-import java.util.*;
+
 class A{
     int add(int x, int y){
         return x+y;
