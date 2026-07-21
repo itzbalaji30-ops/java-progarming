@@ -14,5 +14,6 @@ public class single {
         dog d = new dog();
         d.bark();
         d.sound();
+        
     }
 }
