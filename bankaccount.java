@@ -24,10 +24,21 @@ class bankacc {
     }
 
     public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
+       /* if (amount > 0 && amount <= balance) {
             balance -= amount;
         } else {
             System.out.println("Invalid withdrawal amount.");
+        }*/
+       try {
+            if (amount <= 0) {
+                throw new IllegalArgumentException("Withdrawal amount must be positive.");
+            }
+            if (amount > balance) {
+                throw new IllegalArgumentException("Insufficient funds for withdrawal.");
+            }
+            balance -= amount;
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
